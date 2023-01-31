@@ -23,3 +23,16 @@ string PrintArray(string[] array)
     result += "]";
     return result;
 }
+int length = 3;
+int CheckArray(string[] array, int length)
+{
+    int result = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= length) result++;
+    }
+    return result;
+}
+int smallElements = CheckArray(arrayStrings, length);
+Console.WriteLine("Колличество элементов где lenght = 3 or lenght < 3");
+Console.WriteLine(smallElements);
