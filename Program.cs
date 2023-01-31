@@ -34,5 +34,19 @@ int CheckArray(string[] array, int length)
     return result;
 }
 int smallElements = CheckArray(arrayStrings, length);
-Console.WriteLine("Колличество элементов где lenght = 3 or lenght < 3");
-Console.WriteLine(smallElements);
+string[] newArrayStrings = new string[smallElements];
+NewArray(arrayStrings, newArrayStrings, length);
+void NewArray(string[] oldArray, string[] newArray, int lengthLimit)
+{
+    int temp = 0;
+    for (int i = 0; i < oldArray.Length; i++)
+    {
+        if (oldArray[i].Length <= lengthLimit)
+        {
+            newArray[temp] = oldArray[i];
+            temp++;
+        }
+    }
+}
+Console.WriteLine("Elements where lenght = 3 or lenght < 3");
+Console.WriteLine($"{PrintArray(newArrayStrings)}");
